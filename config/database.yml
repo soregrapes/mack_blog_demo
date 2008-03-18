@@ -1,20 +1,11 @@
 development:
-  adapter: mysql
-  database: blog_comp_development
-  host: localhost
-  username: root
-  password: 
+  adapter: sqlite3
+  database: db/blog_comp_development.db 
     
 test:
-  adapter: mysql
-  database: blog_comp_test
-  host: localhost
-  username: root
-  password:
+  adapter: sqlite3
+  database: db/blog_comp_test.db
 
 production:
-  adapter: mysql
-  database: blog_comp_development
-  host: localhost
-  username: root
-  password:
+  adapter: sqlite3
+  database: db/blog_comp_production.db
