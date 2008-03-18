@@ -1,3 +1,5 @@
+<%= rss_tag(posts_index_url(:format => :xml)) %>
+
 <h1>Listing posts</h1>
 
 <table>
@@ -5,8 +7,6 @@
     <th>Title</th>
     <th>Body</th>
     <th>Email</th>
-    <th>Created at</th>
-    <th>Updated at</th>
   </tr>
 
 <% for post in @posts %>
@@ -14,8 +14,6 @@
     <td><%=post.title %></td>
     <td><%=post.body %></td>
     <td><%=post.email %></td>
-    <td><%=post.created_at %></td>
-    <td><%=post.updated_at %></td>
     <td><%= link_to("Show", posts_show_url(:id => post.id)) %></td>
     <td><%= link_to("Edit", posts_edit_url(:id => post.id)) %></td>
     <td><%= link_to("Delete", posts_delete_url(:id => post.id), :method => :delete, :confirm => "Are you sure?") %></td>
