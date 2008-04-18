@@ -1,23 +1,20 @@
-<h1>New post</h1>
+<h1>New Post</h1>
 
 <%= error_messages_for :post %>
 
 <form action="<%= posts_create_url %>" class="new_post" id="new_post" method="post">
   <p>
     <b>Title</b><br />
-    <input id="post_title" name="post[title]" size="30" type="text" value="<%= @post.title %>" />
+    <input type="text" name="post[title]" id="post_title" size="30" value="<%= @post.title %>" />
   </p>
-
-  <p>
-    <b>Body</b><br />
-    <textarea id="post_body" name="post[body]"><%= @post.body %></textarea>
-  </p>
-
   <p>
     <b>Email</b><br />
-    <input id="post_email" name="post[email]" size="30" type="text" value="<%= @post.email %>" />
+    <input type="text" name="post[email]" id="post_email" size="30" value="<%= @post.email %>" />
   </p>
-
+  <p>
+    <b>Body</b><br />
+    <textarea name="post[body]" id="post_body"><%= @post.body %></textarea>
+  </p>
   <p>
     <input id="post_submit" name="commit" type="submit" value="Create" />
   </p>

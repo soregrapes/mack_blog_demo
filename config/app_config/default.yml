@@ -1,13 +1,7 @@
-# mack::log_level: error
-
-orm: data_mapper
-
 whiny_config_missing: false
 
-foo: bar
+mack::session_id: _mack_blog_demo_session_id
 
-# cachetastic_default_options:
-#   logging:
-#     logger_1:
-#       type: console
-#       level: debug
+# log::level: error
+
+orm: data_mapper

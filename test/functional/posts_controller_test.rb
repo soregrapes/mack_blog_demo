@@ -14,7 +14,7 @@ class PostsControllerTest < Test::Unit::TestCase
   def test_index
     get posts_index_url
     assert_response :success
-    assert_match "<title>Posts: index</title>", response.body
+    assert_match "<title>posts: index</title>", response.body
     posts = assigns(:posts)
     assert_not_nil posts
     assert_equal Post.count, posts.size
@@ -27,7 +27,7 @@ class PostsControllerTest < Test::Unit::TestCase
     p = Post.find(:first)
     get posts_show_url(:id => p.id)
     assert_response :success
-    assert_match "<title>Posts: show</title>", response.body
+    assert_match "<title>posts: show</title>", response.body
     post = assigns(:post)
     assert_not_nil post
     assert_equal p, post
@@ -36,7 +36,7 @@ class PostsControllerTest < Test::Unit::TestCase
   def test_new
     get posts_new_url
     assert_response :success
-    assert_match "<title>Posts: new</title>", response.body
+    assert_match "<title>posts: new</title>", response.body
     post = assigns(:post)
     assert_not_nil post
     assert_nil post.title
@@ -46,7 +46,7 @@ class PostsControllerTest < Test::Unit::TestCase
     p = Post.find(:first)
     get posts_edit_url(:id => p.id)
     assert_response :success
-    assert_match "<title>Posts: edit</title>", response.body
+    assert_match "<title>posts: edit</title>", response.body
     post = assigns(:post)
     assert_not_nil post
     assert_equal p, post

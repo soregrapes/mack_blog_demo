@@ -1,28 +1,26 @@
 <p>
-  <b>Title:</b>
+  <h1>Post</h1>
+</p>
+<p>
+  <b>Title</b><br />
   <%= @post.title %>
 </p>
-
 <p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
-
-<p>
-  <b>Email:</b>
+  <b>Email</b><br />
   <%= @post.email %>
 </p>
-
 <p>
-  <b>Created at:</b>
+  <b>Body</b><br />
+  <%= @post.body %>
+</p>
+<p>
+  <b>CreatedAt</b><br />
   <%= @post.created_at %>
 </p>
-
 <p>
-  <b>Updated at:</b>
+  <b>UpdatedAt</b><br />
   <%= @post.updated_at %>
 </p>
-
 
 <%= link_to("Edit", posts_edit_url(:id => @post.id)) %> |
 <%= link_to("Back", posts_index_url) %>
