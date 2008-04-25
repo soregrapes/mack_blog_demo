@@ -25,7 +25,7 @@
 <% unless @post.uploaded_files.empty? -%>
   <p>Uploaded files:</p>
   <% for uploaded_file in @post.uploaded_files -%>
-    <p><%= link_to(uploaded_file.original_file_name, uploaded_file.file_path) %></p>
+    <p><%= link_to(uploaded_file.original_file_name, "/uploads/#{uploaded_file.file_path}") %></p>
   <% end -%>
 <% end -%>
 

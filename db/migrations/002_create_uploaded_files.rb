@@ -5,7 +5,6 @@ class CreateUploadedFiles < DataMapper::Migration
       t.column :klass_type, :string
       t.column :klass_id, :integer
       t.column :original_file_name, :string
-      t.column :file_path, :string
       t.column :file_type, :string
       t.column :created_at, :datetime
     end
