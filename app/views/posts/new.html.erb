@@ -2,7 +2,7 @@
 
 <%= error_messages_for :post %>
 
-<form action="<%= posts_create_url %>" class="new_post" id="new_post" method="post">
+<form action="<%= posts_create_url %>" class="new_post" id="new_post" method="post" enctype="multipart/form-data">
   <p>
     <b>Title</b><br />
     <input type="text" name="post[title]" id="post_title" size="30" value="<%= @post.title %>" />
@@ -14,6 +14,10 @@
   <p>
     <b>Body</b><br />
     <textarea name="post[body]" id="post_body"><%= @post.body %></textarea>
+  </p>
+  <p>
+    <b>Added a file</b><br />
+    <input type="file" name="post_uploaded_file">
   </p>
   <p>
     <input id="post_submit" name="commit" type="submit" value="Create" />

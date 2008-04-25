@@ -24,7 +24,9 @@ class PostsController < Mack::Controller::Base
   def create
     @post = Post.new(params(:post))
     if @post.save
-      redirect_to(posts_show_url(:id => @post.id))
+      @post.add_uploaded_file(request.file(:post_uploaded_file))
+      @post.reload
+      render(:action => "show")
     else
       render(:action => "new")
     end

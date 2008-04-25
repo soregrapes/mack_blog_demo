@@ -14,13 +14,20 @@
   <%= @post.body %>
 </p>
 <p>
-  <b>CreatedAt</b><br />
+  <b>Created At</b><br />
   <%= @post.created_at %>
 </p>
 <p>
-  <b>UpdatedAt</b><br />
+  <b>Updated At</b><br />
   <%= @post.updated_at %>
 </p>
+
+<% unless @post.uploaded_files.empty? -%>
+  <p>Uploaded files:</p>
+  <% for uploaded_file in @post.uploaded_files -%>
+    <p><%= link_to(uploaded_file.original_file_name, uploaded_file.file_path) %></p>
+  <% end -%>
+<% end -%>
 
 <%= link_to("Edit", posts_edit_url(:id => @post.id)) %> |
 <%= link_to("Back", posts_index_url) %>

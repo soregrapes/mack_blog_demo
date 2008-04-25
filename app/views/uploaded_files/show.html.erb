@@ -1,0 +1,26 @@
+<p>
+  <h1>UploadedFile</h1>
+</p>
+<p>
+  <b>KlassType</b><br />
+  <%= @uploaded_file.klass_type %>
+</p>
+<p>
+  <b>KlassId</b><br />
+  <%= @uploaded_file.klass_id %>
+</p>
+<p>
+  <b>OriginalFileName</b><br />
+  <%= @uploaded_file.original_file_name %>
+</p>
+<p>
+  <b>FileType</b><br />
+  <%= @uploaded_file.file_type %>
+</p>
+<p>
+  <b>CreatedAt</b><br />
+  <%= @uploaded_file.created_at %>
+</p>
+
+<%= link_to("Edit", uploaded_files_edit_url(:id => @uploaded_file.id)) %> |
+<%= link_to("Back", uploaded_files_index_url) %>

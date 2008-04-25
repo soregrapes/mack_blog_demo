@@ -1,0 +1,28 @@
+<h1>Edit UploadedFile</h1>
+
+<%= error_messages_for :uploaded_file %>
+
+<form action="<%= uploaded_files_update_url(:id => @uploaded_file.id) %>" class="edit_uploaded_file" id="edit_uploaded_file" method="uploaded_file">
+  <input type="hidden" name="_method" value="put">
+  <p>
+    <b>KlassType</b><br />
+    <input type="text" name="uploaded_file[klass_type]" id="uploaded_file_klass_type" size="30" value="<%= @uploaded_file.klass_type %>" />
+  </p>
+  <p>
+    <b>KlassId</b><br />
+    <input type="text" name="uploaded_file[klass_id]" id="uploaded_file_klass_id" size="30" value="<%= @uploaded_file.klass_id %>" />
+  </p>
+  <p>
+    <b>OriginalFileName</b><br />
+    <input type="text" name="uploaded_file[original_file_name]" id="uploaded_file_original_file_name" size="30" value="<%= @uploaded_file.original_file_name %>" />
+  </p>
+  <p>
+    <b>FileType</b><br />
+    <input type="text" name="uploaded_file[file_type]" id="uploaded_file_file_type" size="30" value="<%= @uploaded_file.file_type %>" />
+  </p>
+  <p>
+    <input id="uploaded_file_submit" name="commit" type="submit" value="Create" />
+  </p>
+</form>
+
+<%= link_to("Back", uploaded_files_index_url) %>
