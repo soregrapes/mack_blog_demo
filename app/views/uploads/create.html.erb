@@ -1,0 +1,5 @@
+<p>Thank you for uploading your file!</p>
+<p>Your file can be found here: <%= link_to("/uploaded_files/#{@my_new_file.file_name}") %></p>
+
+<p>Upload Another:</p>
+<%= render(:partial => :form) %>

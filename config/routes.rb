@@ -1,6 +1,7 @@
 Mack::Routes.build do |r|
 
   r.resource :posts # Added by rake generate:scaffold name=post
+  r.resource :uploads
   
   r.home_page "/", :controller => :posts, :action => :index
   
