@@ -4,18 +4,7 @@
 
 <form action="<%= posts_update_url(:id => @post.id) %>" class="edit_post" id="edit_post" method="post">
   <input type="hidden" name="_method" value="put">
-  <p>
-    <b>Title</b><br />
-    <input type="text" name="post[title]" id="post_title" size="30" value="<%= @post.title %>" />
-  </p>
-  <p>
-    <b>Email</b><br />
-    <input type="text" name="post[email]" id="post_email" size="30" value="<%= @post.email %>" />
-  </p>
-  <p>
-    <b>Body</b><br />
-    <textarea name="post[body]" id="post_body"><%= @post.body %></textarea>
-  </p>
+  <%= render(:partial => :form) %>
   <p>
     <input id="post_submit" name="commit" type="submit" value="Create" />
   </p>
