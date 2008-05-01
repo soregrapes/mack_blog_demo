@@ -2,7 +2,7 @@
 
 <%= error_messages_for :post %>
 
-<form action="<%= posts_create_url %>" class="new_post" id="new_post" method="post" enctype="multipart/form-data">
+<% form(:action => posts_create_url, :id => :new_post, :class => :new_post, :multipart => true) do -%>
   <%= render(:partial => :form) %>
   <p>
     <b>Added a file</b><br />
@@ -11,6 +11,6 @@
   <p>
     <input id="post_submit" name="commit" type="submit" value="Create" />
   </p>
-</form>
+<% end -%>
 
 <%= link_to("Back", posts_index_url) %>
