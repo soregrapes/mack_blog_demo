@@ -2,7 +2,7 @@
 
 <%= error_messages_for :post %>
 
-<% form(:action => posts_create_url, :id => :new_post, :class => :new_post, :multipart => true) do -%>
+<% form(posts_create_url, :id => :new_post, :class => :new_post, :multipart => true) do -%>
   <%= render(:partial => :form) %>
   <p>
     <b>Added a file</b><br />

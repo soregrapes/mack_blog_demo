@@ -2,12 +2,11 @@
 
 <%= error_messages_for :post %>
 
-<form action="<%= posts_update_url(:id => @post.id) %>" class="edit_post" id="edit_post" method="post">
-  <input type="hidden" name="_method" value="put">
+<% form(posts_update_url(:id => @post.id), :id => :edit_post, :class => :edit_post, :method => :put) do -%>
   <%= render(:partial => :form) %>
   <p>
     <input id="post_submit" name="commit" type="submit" value="Create" />
   </p>
-</form>
+<% end -%>
 
 <%= link_to("Back", posts_index_url) %>
