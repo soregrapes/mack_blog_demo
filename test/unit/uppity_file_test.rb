@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper.rb'
 
-class UploadedFilesControllerTest < Test::Unit::TestCase
+class UppityFileTest < Test::Unit::TestCase
   
   def test_truth
     assert true

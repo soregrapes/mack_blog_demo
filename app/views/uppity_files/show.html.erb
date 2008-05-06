@@ -1,0 +1,26 @@
+<p>
+  <h1>UppityFile</h1>
+</p>
+<p>
+  <b>KlassType</b><br />
+  <%= @uppity_file.klass_type %>
+</p>
+<p>
+  <b>KlassId</b><br />
+  <%= @uppity_file.klass_id %>
+</p>
+<p>
+  <b>OriginalFileName</b><br />
+  <%= @uppity_file.original_file_name %>
+</p>
+<p>
+  <b>FileType</b><br />
+  <%= @uppity_file.file_type %>
+</p>
+<p>
+  <b>CreatedAt</b><br />
+  <%= @uppity_file.created_at %>
+</p>
+
+<%= link_to("Edit", uppity_files_edit_url(:id => @uppity_file.id)) %> |
+<%= link_to("Back", uppity_files_index_url) %>

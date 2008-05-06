@@ -1,4 +1,4 @@
-class UploadedFile
+class UppityFile
   include DataMapper::Persistence
   
   property :klass_type, :string
@@ -18,7 +18,7 @@ class UploadedFile
     "#{self.id}#{self.file_type}"
   end
   
-  UPLOAD_PATH = File.join(MACK_PUBLIC, "uploads")
+  UPLOAD_PATH = File.join(Mack::Configuration.public_directory, "uploads")
   
   private
   def delete_file

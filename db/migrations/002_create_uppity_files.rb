@@ -1,7 +1,7 @@
-class CreateUploadedFiles < DataMapper::Migration
+class CreateUppityFiles < DataMapper::Migration
 
   def self.up
-    create_table :uploaded_files do |t|
+    create_table :uppity_files do |t|
       t.column :klass_type, :string
       t.column :klass_id, :integer
       t.column :original_file_name, :string
@@ -11,7 +11,7 @@ class CreateUploadedFiles < DataMapper::Migration
   end
 
   def self.down
-    drop_table :uploaded_files
+    drop_table :uppity_files
   end
 
 end

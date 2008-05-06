@@ -24,7 +24,7 @@ class PostsController < Mack::Controller::Base
   def create
     @post = Post.new(params(:post))
     if @post.save
-      @post.add_uploaded_file(request.file(:post_uploaded_file))
+      @post.add_uppity_file(request.file(:post_uppity_file))
       @post.reload
       render(:action => "show")
     else
