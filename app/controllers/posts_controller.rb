@@ -48,5 +48,9 @@ class PostsController < Mack::Controller::Base
     @post.destroy!
     redirect_to(posts_index_url)
   end
+  
+  def total_posts
+    render(:text => Post.count.to_s, :layout => false)
+  end
 
 end
