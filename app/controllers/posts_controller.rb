@@ -7,6 +7,7 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts/1
   def show
+    MACK_DEFAULT_LOGGER.debug "asdfsadf"
     @post = Post.find(params(:id))
   end
 
@@ -24,8 +25,11 @@ class PostsController < Mack::Controller::Base
   def create
     @post = Post.new(params(:post))
     if @post.save
-      @post.add_uppity_file(request.file(:post_uppity_file))
-      @post.reload
+      pp request.file(:post_uppity_file)
+      unless request.file(:post_uppity_file).file_name.blank?
+        @post.add_uppity_file(request.file(:post_uppity_file))
+        @post.reload
+      end
       render(:action => "show")
     else
       render(:action => "new")
@@ -50,7 +54,8 @@ class PostsController < Mack::Controller::Base
   end
   
   def total_posts
-    render(:text => Post.count.to_s, :layout => false)
+    logger.debug(request.inspect)
+    render(:action => :total_posts, :layout => false)
   end
 
 end
