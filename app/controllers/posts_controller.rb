@@ -2,12 +2,12 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts
   def index
-    @posts = Post.find(:all)
+    @posts = Post.all
   end
 
   # GET /posts/1
   def show
-    @post = Post.find(params(:id))
+    @post = Post.first(params(:id))
   end
 
   # GET /posts/new
@@ -17,7 +17,7 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params(:id))
+    @post = Post.first(params(:id))
   end
 
   # POST /posts
@@ -37,7 +37,7 @@ class PostsController < Mack::Controller::Base
 
   # PUT /posts/1
   def update
-    @post = Post.find(params(:id))
+    @post = Post.first(params(:id))
     if @post.update_attributes(params(:post))
       redirect_to(posts_show_url(:id => @post.id))
     else
@@ -47,7 +47,7 @@ class PostsController < Mack::Controller::Base
 
   # DELETE /posts/1
   def delete
-    @post = Post.find(params(:id))
+    @post = Post.first(params(:id))
     @post.destroy!
     redirect_to(posts_index_url)
   end
