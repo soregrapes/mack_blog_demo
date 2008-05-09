@@ -7,7 +7,6 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts/1
   def show
-    MACK_DEFAULT_LOGGER.debug "asdfsadf"
     @post = Post.find(params(:id))
   end
 
@@ -54,7 +53,6 @@ class PostsController < Mack::Controller::Base
   end
   
   def total_posts
-    logger.debug(request.inspect)
     render(:action => :total_posts, :layout => false)
   end
 
