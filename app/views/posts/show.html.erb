@@ -27,12 +27,12 @@
 <% unless @post.uppity_files.empty? -%>
   <p>Uploaded files:</p>
   <% for uppity_file in @post.uppity_files -%>
-    <p><%= link_to(uppity_file.original_file_name, "/uploads/#{uppity_file.file_path}") %> <%= link_to("Delete", uppity_files_delete_url(:id => uppity_file.id), :method => :delete, :confirm => "Are you sure?") %></p>
+    <p><%= link_to(uppity_file.original_file_name, "/uploads/#{uppity_file.file_path}") %> <%= link_to("Delete", uppity_files_delete_url(:id => uppity_file), :method => :delete, :confirm => "Are you sure?") %></p>
   <% end -%>
 <% end -%>
 
 <hr />
 
-<%= link_to("Edit", posts_edit_url(:id => @post.id)) %> |
-<%= link_to("Delete", posts_delete_url(:id => @post.id), :method => :delete, :confirm => "Are you sure?") %> |
+<%= link_to("Edit", posts_edit_url(:id => @post)) %> |
+<%= link_to("Delete", posts_delete_url(:id => @post), :method => :delete, :confirm => "Are you sure?") %> |
 <%= link_to("Back", posts_index_url) %>

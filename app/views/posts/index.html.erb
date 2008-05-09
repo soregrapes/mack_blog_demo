@@ -18,9 +18,9 @@
     <td><%= post.body %></td>
     <td><%= post.created_at %></td>
     <td><%= post.updated_at %></td>
-    <td><%= link_to("Show", posts_show_url(:id => post.id)) %></td>
-    <td><%= link_to("Edit", posts_edit_url(:id => post.id)) %></td>
-    <td><%= link_to("Delete", posts_delete_url(:id => post.id), :method => :delete, :confirm => "Are you sure?") %></td>
+    <td><%= link_to("Show", posts_show_url(:id => post)) %></td>
+    <td><%= link_to("Edit", posts_edit_url(:id => post)) %></td>
+    <td><%= link_to("Delete", posts_delete_url(:id => post), :method => :delete, :confirm => "Are you sure?") %></td>
   </tr>
 <% end %>
 </table>

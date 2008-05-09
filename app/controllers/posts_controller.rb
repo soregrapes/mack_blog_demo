@@ -7,7 +7,7 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts/1
   def show
-    @post = Post.first(params(:id))
+    @post = Post.first(params(:id).to_i)
   end
 
   # GET /posts/new
@@ -17,7 +17,7 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts/1/edit
   def edit
-    @post = Post.first(params(:id))
+    @post = Post.first(params(:id).to_i)
   end
 
   # POST /posts
@@ -37,9 +37,9 @@ class PostsController < Mack::Controller::Base
 
   # PUT /posts/1
   def update
-    @post = Post.first(params(:id))
+    @post = Post.first(params(:id).to_i)
     if @post.update_attributes(params(:post))
-      redirect_to(posts_show_url(:id => @post.id))
+      redirect_to(posts_show_url(:id => @post))
     else
       render(:action => "edit")
     end
@@ -47,7 +47,7 @@ class PostsController < Mack::Controller::Base
 
   # DELETE /posts/1
   def delete
-    @post = Post.first(params(:id))
+    @post = Post.first(params(:id).to_i)
     @post.destroy!
     redirect_to(posts_index_url)
   end
