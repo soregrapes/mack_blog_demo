@@ -29,9 +29,9 @@ class PostsController < Mack::Controller::Base
         @post.add_uppity_file(request.file(:post_uppity_file))
         @post.reload
       end
-      render(:action => "show")
+      render(:action, "show")
     else
-      render(:action => "new")
+      render(:action, "new")
     end
   end
 
@@ -41,7 +41,7 @@ class PostsController < Mack::Controller::Base
     if @post.update_attributes(params(:post))
       redirect_to(posts_show_url(:id => @post))
     else
-      render(:action => "edit")
+      render(:action, "edit")
     end
   end
 
@@ -53,7 +53,7 @@ class PostsController < Mack::Controller::Base
   end
   
   def total_posts
-    render(:action => :total_posts, :layout => false)
+    render(:action, :total_posts, :layout => false)
   end
 
 end
