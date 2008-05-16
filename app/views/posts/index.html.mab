@@ -1,0 +1,39 @@
+mab.div do
+  text(rss_tag(posts_index_url(:format => :xml)))
+
+  h1 do
+    "Listing Posts"
+  end
+
+  table do
+    tr do
+      th "Title"
+      th "Email"
+      th "Body"
+      th "Created At"
+      th "Updated At"
+      3.times {th ""}
+    end
+    
+    for post in @posts
+      tr do
+        td post.title
+        td post.email
+        td post.body
+        td post.created_at
+        td post.updated_at
+        td do
+          link_to("Show", posts_show_url(:id => post))
+        end
+        td do
+          link_to("Edit", posts_edit_url(:id => post))
+        end
+        td do
+          link_to("Delete", posts_delete_url(:id => post), :method => :delete, :confirm => "Are you sure?")
+        end
+      end
+    end
+    
+  end
+end
+

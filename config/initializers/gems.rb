@@ -9,4 +9,5 @@ require_gems do |gem|
   # gem.add :redgreen, :version => "1.2.2", :libs => :redgreen
   # gem.add :termios
   # gem.add :rubyzip, :source => "http://gems.rubyforge.org"
+  gem.add :markaby, :version => "0.5.0", :libs => :markaby
 end
