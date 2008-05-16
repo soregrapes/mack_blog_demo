@@ -53,7 +53,7 @@ class PostsController < Mack::Controller::Base
   end
   
   def total_posts
-    render(:action, :total_posts, :layout => false)
+    render(:partial, :total_posts)
   end
 
 end

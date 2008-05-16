@@ -3,7 +3,7 @@
 <%= error_messages_for :post %>
 
 <% form(posts_update_url(:id => @post), :id => :edit_post, :class => :edit_post, :method => :put) do -%>
-  <%= render(:partial => :form) %>
+  <%= render(:partial, :form) %>
   <p>
     <input id="post_submit" name="commit" type="submit" value="Create" />
   </p>
