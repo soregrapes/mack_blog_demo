@@ -35,5 +35,8 @@ mab.div do
     end
     
   end
+  
+  br
+  
+  link_to("New Post", posts_new_url)
 end
-
