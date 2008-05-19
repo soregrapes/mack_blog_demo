@@ -5,7 +5,7 @@
 </p>
 <p>
   <b>Title</b><br />
-  <%= @post.title %>
+  <%= @post.title %> [<%= link_to("pdf", posts_show_url(:id => @post, :format => :pdf)) %>]
 </p>
 <p>
   <b>Email</b><br />

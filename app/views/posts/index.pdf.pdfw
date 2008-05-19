@@ -1,0 +1,17 @@
+require 'pdf/simpletable'
+pdf.select_font "Times-Roman"
+table = PDF::SimpleTable.new
+table.width = 500
+table.split_rows = true
+table.column_order = ["title", "email", "body", "created at", "updated at"]
+table.columns["created at"] = PDF::SimpleTable::Column.new("created at") do |col| 
+  col.justification = :center
+end
+table.columns["updated at"] = PDF::SimpleTable::Column.new("updated at") do |col| 
+  col.justification = :center
+end
+table.data = []
+for post in @posts
+  table.data << {"title" => post.title, "email" => post.email, "body" => post.body, "created at" => post.created_at.strftime("%m/%d/%y"), "updated at" => post.updated_at.strftime("%m/%d/%y")}
+end
+table.render_on(pdf)
