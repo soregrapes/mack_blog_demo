@@ -2,7 +2,7 @@ mab.div do
   text(rss_tag(posts_index_url(:format => :xml)))
 
   h1 do
-    "Listing Posts"
+    "Listing Posts (Markaby)"
   end
 
   table do
