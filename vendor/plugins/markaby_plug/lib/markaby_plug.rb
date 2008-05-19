@@ -3,13 +3,9 @@ module Mack
     module Engine
       class Markaby < Mack::Rendering::Engine::Base
         
-        def initialize(view_template)
-          super
+        def render(io, binding)
           @_markaby = ::Markaby::Builder.new({}, self.view_template)
           self.view_template.instance_variable_set("@_markaby", @_markaby)
-        end
-        
-        def render(io, binding)
           eval(io, binding)
         end
         
