@@ -1,8 +1,8 @@
-<h1>Edit UppityFile</h1>
+<h1>Edit PostedFile</h1>
 
 <%= error_messages_for :uppity_file %>
 
-<form action="<%= uppity_files_update_url(:id => @uppity_file) %>" class="edit_uppity_file" id="edit_uppity_file" method="uppity_file">
+<form action="<%= posted_files_update_url(:id => @uppity_file) %>" class="edit_uppity_file" id="edit_uppity_file" method="uppity_file">
   <input type="hidden" name="_method" value="put">
   <p>
     <b>KlassType</b><br />
@@ -25,4 +25,4 @@
   </p>
 </form>
 
-<%= link_to("Back", uppity_files_index_url) %>
+<%= link_to("Back", posted_files_index_url) %>

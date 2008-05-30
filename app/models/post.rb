@@ -1,25 +1,25 @@
 class Post
-  include DataMapper::Persistence
+  include DataMapper::Resource
   
-  property :title, :string
-  property :email, :string
-  property :body, :text
-  property :created_at, :datetime
-  property :updated_at, :datetime
+  property :id, Integer, :key => true, :serial => true
+  property :title, String
+  property :email, String
+  property :body, Text
+  property :created_at, DateTime
+  property :updated_at, DateTime
   
-  has_many :uppity_files, :conditions => ["klass_type = 'post'"], :foreign_key => :klass_id, :dependent => :destroy
+  has 0..n, :posted_files
   
-  validates_presence_of :title
-  validates_presence_of :email
-  validates_presence_of :body
+  validates_present :title
+  validates_present :email
+  validates_present :body
   
-  def add_uppity_file(mack_file)
+  def add_posted_file(mack_file)
     if mack_file
-      file = UppityFile.create(:klass_type => 'post', 
-                                 :klass_id => self.id, 
-                                 :original_file_name => mack_file.file_name, 
-                                 :file_type => File.extname(mack_file.file_name))
-      mack_file.save_to([UppityFile::UPLOAD_PATH, file.file_path])
+      file = PostedFile.create(:post_id => self.id, 
+                               :original_file_name => mack_file.file_name, 
+                               :file_type => File.extname(mack_file.file_name))
+      mack_file.save_to([PostedFile::UPLOAD_PATH, file.file_path])
     end
   end
   

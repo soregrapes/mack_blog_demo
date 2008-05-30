@@ -1,16 +1,17 @@
-class CreatePosts < DataMapper::Migration
+migration 1, :create_posts do
 
-  def self.up
-    create_table :posts do |t|
-      t.column :title, :string
-      t.column :email, :string
-      t.column :body, :text
-      t.column :created_at, :datetime
-      t.column :updated_at, :datetime
+  up do
+    create_table :posts do
+      column :id, "serial PRIMARY KEY"
+      column :title, "varchar(50)"
+      column :email, "varchar(50)"
+      column :body, "text"
+      column :created_at, "datetime"
+      column :updated_at, "datetime"
     end
   end
 
-  def self.down
+  down do
     drop_table :posts
   end
 
