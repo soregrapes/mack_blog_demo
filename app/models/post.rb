@@ -1,7 +1,7 @@
 class Post
   include DataMapper::Resource
   
-  property :id, Integer, :key => true, :serial => true
+  property :id, Integer, :serial => true
   property :title, String
   property :email, String
   property :body, Text

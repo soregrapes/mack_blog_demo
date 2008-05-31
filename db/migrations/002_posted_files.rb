@@ -6,7 +6,7 @@ migration 2, :posted_files do
       column :post_id, "integer"
       column :original_file_name, "varchar(50)"
       column :file_type, "varchar(50)"
-      column :created_at, "datetime"
+      column :created_at, "timestamp"
     end
   end
 

@@ -1,32 +1,62 @@
 # development:
-#   adapter: mysql
-#   database: mack_blog_demo_development
-#   host: localhost
-#   username: root
-#   password: 
+#   default:
+#     adapter: mysql
+#     database: mack_blog_demo_development
+#     host: localhost
+#     username: root
+#     password: 
 #     
 # test:
-#   adapter: mysql
-#   database: mack_blog_demo_test
-#   host: localhost
-#   username: root
-#   password:
+#   default:
+#     adapter: mysql
+#     database: mack_blog_demo_test
+#     host: localhost
+#     username: root
+#     password:
 # 
 # production:
-#   adapter: mysql
-#   database: mack_blog_demo_production
-#   host: localhost
-#   username: root
-#   password:
+#   default:
+#     adapter: mysql
+#     database: mack_blog_demo_production
+#     host: localhost
+#     username: root
+#     password:
+  
+# development:
+#   default:
+#     adapter: postgres
+#     database: mack_blog_demo_development
+#     host: localhost
+#     username: ruby
+#     password: password
+# 
+# test:
+#   default:
+#     adapter: postgresql
+#     database: mack_blog_demo_test
+#     host: localhost
+#     username: ruby
+#     password: password
+# 
+# production:
+#   default:
+#     adapter: postgresql
+#     database: mack_blog_demo_production
+#     host: localhost
+#     username: ruby
+#     password: password
 
 development:
-  adapter: sqlite3
-  database: db/mack_blog_demo_development.db 
+  default:
+    adapter: sqlite3
+    database: db/mack_blog_demo_development.db 
 
 test:
-  adapter: sqlite3
-  database: db/mack_blog_demo_test.db 
+  default:                           
+    adapter: sqlite3
+    database: db/mack_blog_demo_test.db 
 
 production:
-  adapter: sqlite3
-  database: db/mack_blog_demo_production.db 
+  default:                                 
+    adapter: sqlite3
+    database: db/mack_blog_demo_production.db 

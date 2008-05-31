@@ -6,8 +6,8 @@ migration 1, :create_posts do
       column :title, "varchar(50)"
       column :email, "varchar(50)"
       column :body, "text"
-      column :created_at, "datetime"
-      column :updated_at, "datetime"
+      column :created_at, "timestamp"
+      column :updated_at, "timestamp"
     end
   end
 
