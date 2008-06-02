@@ -2,11 +2,11 @@ migration 2, :posted_files do
 
   up do
     create_table :posted_files do
-      column :id, "serial PRIMARY KEY"
-      column :post_id, "integer"
-      column :original_file_name, "varchar(50)"
-      column :file_type, "varchar(50)"
-      column :created_at, "timestamp"
+      column :id, Integer, :serial => true
+      column :post_id, Integer
+      column :original_file_name, String, :size => 255
+      column :file_type, String, :size => 100
+      column :created_at, DateTime
     end
   end
 

@@ -23,8 +23,8 @@ class Post
     end
   end
   
-  # def to_param
-  #   "#{self.id}-#{self.title.methodize.truncate(50, "")}"
-  # end
+  def to_param
+    "#{self.id}-#{self.title.methodize.truncate(50, "")}"
+  end
   
 end

@@ -2,12 +2,12 @@ migration 1, :create_posts do
 
   up do
     create_table :posts do
-      column :id, "serial PRIMARY KEY"
-      column :title, "varchar(50)"
-      column :email, "varchar(50)"
-      column :body, "text"
-      column :created_at, "timestamp"
-      column :updated_at, "timestamp"
+      column :id, Integer, :serial => true
+      column :title, String
+      column :email, String
+      column :body, DataMapper::Types::Text
+      column :created_at, DateTime
+      column :updated_at, DateTime
     end
   end
 

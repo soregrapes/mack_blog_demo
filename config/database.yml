@@ -22,41 +22,41 @@
 #     username: root
 #     password:
   
-# development:
-#   default:
-#     adapter: postgres
-#     database: mack_blog_demo_development
-#     host: localhost
-#     username: ruby
-#     password: password
-# 
-# test:
-#   default:
-#     adapter: postgresql
-#     database: mack_blog_demo_test
-#     host: localhost
-#     username: ruby
-#     password: password
-# 
-# production:
-#   default:
-#     adapter: postgresql
-#     database: mack_blog_demo_production
-#     host: localhost
-#     username: ruby
-#     password: password
-
 development:
   default:
-    adapter: sqlite3
-    database: db/mack_blog_demo_development.db 
+    adapter: postgres
+    database: mack_blog_demo_development
+    host: localhost
+    username: ruby
+    password: password
 
 test:
-  default:                           
-    adapter: sqlite3
-    database: db/mack_blog_demo_test.db 
+  default:
+    adapter: postgresql
+    database: mack_blog_demo_test
+    host: localhost
+    username: ruby
+    password: password
 
 production:
-  default:                                 
-    adapter: sqlite3
-    database: db/mack_blog_demo_production.db 
+  default:
+    adapter: postgresql
+    database: mack_blog_demo_production
+    host: localhost
+    username: ruby
+    password: password
+
+# development:
+#   default:
+#     adapter: sqlite3
+#     database: db/mack_blog_demo_development.db 
+# 
+# test:
+#   default:                           
+#     adapter: sqlite3
+#     database: db/mack_blog_demo_test.db 
+# 
+# production:
+#   default:                                 
+#     adapter: sqlite3
+#     database: db/mack_blog_demo_production.db 

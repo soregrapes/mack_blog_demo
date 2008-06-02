@@ -3,8 +3,8 @@ class PostedFile
   
   property :id, Integer, :serial => true
   property :post_id, Integer
-  property :original_file_name, String
-  property :file_type, String
+  property :original_file_name, String, :size => 255
+  property :file_type, String, :size => 100
   property :created_at, DateTime
   
   validates_present :post_id
