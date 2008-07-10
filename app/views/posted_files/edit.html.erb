@@ -2,8 +2,7 @@
 
 <%= error_messages_for :uppity_file %>
 
-<form action="<%= posted_files_update_url(:id => @uppity_file) %>" class="edit_uppity_file" id="edit_uppity_file" method="uppity_file">
-  <input type="hidden" name="_method" value="put">
+<% form(posted_files_update_url(:id => @uppity_file), :method => :put) do -%>
   <p>
     <b>KlassType</b><br />
     <input type="text" name="uppity_file[klass_type]" id="uppity_file_klass_type" size="30" value="<%= @uppity_file.klass_type %>" />
@@ -23,6 +22,6 @@
   <p>
     <input id="uppity_file_submit" name="commit" type="submit" value="Create" />
   </p>
-</form>
+<% end -%>
 
 <%= link_to("Back", posted_files_index_url) %>

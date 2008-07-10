@@ -1,4 +1,5 @@
-class PostedFilesController < Mack::Controller::Base
+class PostedFilesController
+  include Mack::Controller
 
   # # GET /posted_files
   # def index
@@ -42,8 +43,8 @@ class PostedFilesController < Mack::Controller::Base
 
   # DELETE /posted_files/1
   def delete
-    @uppity_file = PostedFile.find(params(:id))
-    @uppity_file.destroy!
+    @uppity_file = PostedFile.get(params[:id])
+    @uppity_file.destroy
     redirect_to(posts_index_url)
   end
 

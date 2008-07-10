@@ -1,7 +1,7 @@
 class PostedFile
   include DataMapper::Resource
   
-  property :id, Integer, :serial => true
+  property :id, Serial
   property :post_id, Integer
   property :original_file_name, String, :size => 255
   property :file_type, String, :size => 100
@@ -17,7 +17,7 @@ class PostedFile
     "#{self.id}#{self.file_type}"
   end
   
-  UPLOAD_PATH = File.join(Mack::Configuration.public_directory, "uploads")
+  UPLOAD_PATH = Mack::Paths.public("uploads")
   
   private
   def delete_file

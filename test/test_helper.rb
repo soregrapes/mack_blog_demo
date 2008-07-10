@@ -3,7 +3,7 @@ require "test/unit"
 require 'fileutils'
 
 ENV["MACK_ENV"] = "test"
-
+ENV["MACK_ROOT"] = File.join(File.dirname(__FILE__), "..")
 # load the mack framework:
 load(File.join(File.dirname(__FILE__), "..", "Rakefile"))
 require 'mack'

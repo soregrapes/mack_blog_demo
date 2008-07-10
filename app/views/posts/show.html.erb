@@ -36,9 +36,3 @@
 <%= link_to("Edit", posts_edit_url(:id => @post)) %> |
 <%= link_to("Delete", posts_delete_url(:id => @post), :method => :delete, :confirm => "Are you sure?") %> |
 <%= link_to("Back", posts_index_url) %>
-
-<%% repository(:default) do -%>
-<% 10.times do -%>
-  puts <%= Post.first.object_id %>
-<% end -%>
-<%% end -%>

@@ -32,7 +32,7 @@ development:
 
 test:
   default:
-    adapter: postgresql
+    adapter: postgres
     database: mack_blog_demo_test
     host: localhost
     username: ruby
@@ -40,7 +40,7 @@ test:
 
 production:
   default:
-    adapter: postgresql
+    adapter: postgres
     database: mack_blog_demo_production
     host: localhost
     username: ruby
