@@ -29,7 +29,8 @@ class PostsController
         @post.add_posted_file(request.file(:post_uppity_file))
         @post.reload
       end
-      render(:action, "show")
+      # render(:action, "show")
+      redirect_to(posts_show_url(:id => @post))
     else
       render(:action, "new")
     end

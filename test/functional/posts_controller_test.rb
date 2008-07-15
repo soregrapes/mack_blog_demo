@@ -55,7 +55,7 @@ class PostsControllerTest < Test::Unit::TestCase
   def test_create
     assert_difference(Post, :count) do
       post posts_create_url, :post => {:title => "My Third Post", :email => "mark@mackframework.com", :body => "This is my third post."}
-      assert_response(:success)
+      assert_response(:redirect)
       post = assigns(:post)
       assert_not_nil post
       assert_equal "My Third Post", post.title
