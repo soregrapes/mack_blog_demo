@@ -24,10 +24,10 @@
   <%= @post.updated_at %>
 </p>
 
-<% unless @post.uppity_files.empty? -%>
+<% unless @post.posted_files.empty? -%>
   <p>Uploaded files:</p>
-  <% for uppity_file in @post.uppity_files -%>
-    <p><%= link_to(uppity_file.original_file_name, "/uploads/#{uppity_file.file_path}") %> <%= link_to("Delete", uppity_files_delete_url(:id => uppity_file), :method => :delete, :confirm => "Are you sure?") %></p>
+  <% for uppity_file in @post.posted_files -%>
+    <p><%= link_to(uppity_file.original_file_name, "/uploads/#{uppity_file.file_path}") %> <%= link_to("Delete", posted_files_delete_url(:id => uppity_file), :method => :delete, :confirm => "Are you sure?") %></p>
   <% end -%>
 <% end -%>
 
