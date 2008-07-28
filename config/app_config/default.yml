@@ -2,6 +2,4 @@ whiny_config_missing: false
 
 mack::session_id: _mack_blog_demo_session_id
 
-orm: data_mapper
-
 mack::testing_framework: test_case
