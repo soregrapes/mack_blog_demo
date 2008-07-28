@@ -1,4 +1,5 @@
-class PostsController < Mack::Controller::Base
+class PostsController
+  include Mack::Controller
 
   # GET /posts
   def index
@@ -7,7 +8,7 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts/1
   def show
-    @post = Post.first(params(:id).to_i)
+    @post = Post.get(params[:id].to_i)
   end
 
   # GET /posts/new
@@ -17,19 +18,19 @@ class PostsController < Mack::Controller::Base
 
   # GET /posts/1/edit
   def edit
-    @post = Post.first(params(:id).to_i)
+    @post = Post.get(params[:id].to_i)
   end
 
   # POST /posts
   def create
-    @post = Post.new(params(:post))
+    @post = Post.new(params[:post])
     if @post.save
-      pp request.file(:post_uppity_file)
       unless request.file(:post_uppity_file).file_name.blank?
-        @post.add_uppity_file(request.file(:post_uppity_file))
+        @post.add_posted_file(request.file(:post_uppity_file))
         @post.reload
       end
-      render(:action, "show")
+      # render(:action, "show")
+      redirect_to(posts_show_url(:id => @post))
     else
       render(:action, "new")
     end
@@ -37,8 +38,8 @@ class PostsController < Mack::Controller::Base
 
   # PUT /posts/1
   def update
-    @post = Post.first(params(:id).to_i)
-    if @post.update_attributes(params(:post))
+    @post = Post.get(params[:id].to_i)
+    if @post.update_attributes(params[:post])
       redirect_to(posts_show_url(:id => @post))
     else
       render(:action, "edit")
@@ -47,8 +48,8 @@ class PostsController < Mack::Controller::Base
 
   # DELETE /posts/1
   def delete
-    @post = Post.first(params(:id).to_i)
-    @post.destroy!
+    @post = Post.get(params[:id].to_i)
+    @post.destroy
     redirect_to(posts_index_url)
   end
   

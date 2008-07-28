@@ -8,7 +8,7 @@ class PostsControllerTest < Test::Unit::TestCase
   end
   
   def teardown
-    Post.delete_all
+    # Post.delete_all
   end
   
   def test_index
@@ -24,7 +24,7 @@ class PostsControllerTest < Test::Unit::TestCase
   end
   
   def test_show
-    p = Post.find(:first)
+    p = Post.first
     get posts_show_url(:id => p.id)
     assert_response :success
     assert_match "<title>posts: show</title>", response.body
@@ -43,7 +43,7 @@ class PostsControllerTest < Test::Unit::TestCase
   end
   
   def test_edit
-    p = Post.find(:first)
+    p = Post.first
     get posts_edit_url(:id => p.id)
     assert_response :success
     assert_match "<title>posts: edit</title>", response.body
@@ -55,10 +55,9 @@ class PostsControllerTest < Test::Unit::TestCase
   def test_create
     assert_difference(Post, :count) do
       post posts_create_url, :post => {:title => "My Third Post", :email => "mark@mackframework.com", :body => "This is my third post."}
-      assert_response :redirect
+      assert_response(:redirect)
       post = assigns(:post)
       assert_not_nil post
-      assert_redirected_to posts_show_url(:id => post.id)
       assert_equal "My Third Post", post.title
       assert_not_nil post.created_at
       assert_equal post.created_at.to_s, post.updated_at.to_s
@@ -67,12 +66,12 @@ class PostsControllerTest < Test::Unit::TestCase
   
   def test_update
     assert_difference(Post, :count, 0) do
-      p = Post.find(:first)
+      p = Post.first
       put posts_update_url(:id => p.id), :post => {:title => "My edited initial post"}
       assert_response :redirect
       post = assigns(:post)
       assert_not_nil post
-      assert_redirected_to posts_show_url(:id => post.id)
+      assert_redirected_to posts_show_url(:id => post)
       assert_equal "My edited initial post", post.title
       assert_equal p.email, post.email
       assert_equal p.body, post.body
@@ -83,7 +82,7 @@ class PostsControllerTest < Test::Unit::TestCase
   
   def test_delete
     assert_difference(Post, :count, -1) do
-      p = Post.find(:first)
+      p = Post.first
       delete posts_delete_url(:id => p.id)
       assert_response :redirect
       assert_redirected_to posts_index_url
