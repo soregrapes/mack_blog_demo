@@ -10,7 +10,9 @@ require_gems do |gem|
   # gem.add :termios
   # # gem.add :rubyzip, :source => "http://gems.rubyforge.org"
   # gem.add :markaby, :version => "0.5.0", :libs => :markaby
-  gem.add "mack-data_mapper", :version => "0.6.0.100", :libs => "mack-data_mapper"
+  gem.add "mack-data_mapper", :libs => "mack-data_mapper"
   gem.add "mack-paths", :libs => "mack-paths"
+  gem.add "mack-pdf_writer", :libs => "mack-pdf_writer"
+  gem.add "mack-data_factory", :libs => "mack-data_factory"
   gem.add "pdf-writer", :version => "1.1.8", :libs => "pdf/writer"
 end
