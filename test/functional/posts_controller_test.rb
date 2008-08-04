@@ -3,12 +3,7 @@ require File.dirname(__FILE__) + '/../test_helper.rb'
 class PostsControllerTest < Test::Unit::TestCase
   
   def setup
-    Post.create(:title => "My Initial Post", :email => "mark@mackframework.com", :body => "This is my initial post.")
-    Post.create(:title => "My Second Post", :email => "mark@mackframework.com", :body => "This is my second post.")
-  end
-  
-  def teardown
-    # Post.delete_all
+    PostFactory.create(2)
   end
   
   def test_index
@@ -21,6 +16,12 @@ class PostsControllerTest < Test::Unit::TestCase
     posts.each do |post|
       assert_match post.body, response.body
     end
+  end
+  
+  def test_index_pdf
+    get posts_index_url(:format => :pdf)
+    assert_response :success
+    assert response.content_type == "application/pdf"
   end
   
   def test_show

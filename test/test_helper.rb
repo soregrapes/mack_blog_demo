@@ -14,3 +14,12 @@ require 'mack'
 class Test::Unit::TestCase
   
 end
+
+class PostFactory
+  include Mack::Data::Factory
+  
+  field :title, "", :content => :alpha, :length => 50
+  field :email, "", :content => :email
+  field :body, "", :content => :alpha_numeric, :length => 1000
+  
+end
